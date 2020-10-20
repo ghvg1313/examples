@@ -31,6 +31,11 @@ file_collector_aspect = aspect(
     attr_aspects = ["deps"],
     attrs = {
         "extension": attr.string(values = ["*", "h", "cc"]),
+        "_example_util": attr.label(
+            executable = True,
+            cfg = "host",
+            default = "//aspect/util:UtilBin",
+        ),
     },
 )
 
